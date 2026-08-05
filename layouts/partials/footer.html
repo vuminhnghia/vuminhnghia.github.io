@@ -1,0 +1,9 @@
+<footer class="site-footer">
+  <div class="social">
+    {{ with site.Params.social.github }}<a href="https://github.com/{{ . }}" rel="me">GitHub</a>{{ end }}
+    {{ with site.Params.social.email }}<a href="mailto:{{ . }}">Email</a>{{ end }}
+    {{ with site.Params.social.linkedin }}<a href="{{ . }}" rel="me">LinkedIn</a>{{ end }}
+    {{ with site.Params.social.twitter }}<a href="{{ . }}" rel="me">Twitter</a>{{ end }}
+  </div>
+  <p>© {{ now.Year }} {{ site.Params.author }}. Built with Hugo.</p>
+</footer>

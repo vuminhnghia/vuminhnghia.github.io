@@ -1,0 +1,42 @@
+baseURL: "https://vuminhnghia.github.io/"
+locale: "en"
+title: "Vu Minh Nghia"
+enableRobotsTXT: true
+enableEmoji: true
+
+pagination:
+  pagerSize: 8
+
+params:
+  author: "Vu Minh Nghia"
+  description: "Notes on AI, research, and whatever else is on my mind."
+  social:
+    github: "vuminhnghia"
+    email: "vuminhnghia.work@gmail.com"
+    # linkedin: ""
+    # twitter: ""
+
+menu:
+  main:
+    - name: "Home"
+      pageRef: "/"
+      weight: 1
+    - name: "Posts"
+      pageRef: "/posts"
+      weight: 2
+    - name: "About"
+      pageRef: "/about"
+      weight: 3
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    style: "github"
+    lineNos: false
+    tabWidth: 2
+    noClasses: false
+
+taxonomies:
+  tag: "tags"
