@@ -1,0 +1,10 @@
+{{/* Renders a page list: small date above a large serif title. */}}
+<ul class="posts">
+  {{ range . }}
+    <li class="post-item">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+      <a class="post-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+      {{ with .Description }}<p class="post-summary">{{ . }}</p>{{ end }}
+    </li>
+  {{ end }}
+</ul>

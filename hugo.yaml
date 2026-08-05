@@ -1,6 +1,6 @@
 baseURL: "https://vuminhnghia.github.io/"
 locale: "en"
-title: "Vu Minh Nghia"
+title: "Nghia Vu"
 enableRobotsTXT: true
 enableEmoji: true
 
@@ -8,25 +8,31 @@ pagination:
   pagerSize: 8
 
 params:
-  author: "Vu Minh Nghia"
+  author: "Nghia Vu"
   description: "Notes on AI, research, and whatever else is on my mind."
+  footerBio: "I work on AI and research. I write about what I learn along the way."
   social:
     github: "vuminhnghia"
     email: "vuminhnghia.work@gmail.com"
+    instagram: "vumnghia"
+    facebook: "vumnghia147"
     # linkedin: ""
     # twitter: ""
 
 menu:
   main:
-    - name: "Home"
-      pageRef: "/"
-      weight: 1
-    - name: "Posts"
+    - name: "Blog"
       pageRef: "/posts"
+      weight: 1
+    - name: "List 100"
+      pageRef: "/list-100"
       weight: 2
+    - name: "VN"
+      pageRef: "/vn"
+      weight: 3
     - name: "About"
       pageRef: "/about"
-      weight: 3
+      weight: 4
 
 markup:
   goldmark:

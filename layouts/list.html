@@ -5,18 +5,8 @@
   </section>
 
   <section class="post-list">
-    <ul class="posts">
-      {{ range .Paginator.Pages }}
-        <li class="post-item">
-          <a href="{{ .RelPermalink }}" class="post-link">
-            <span class="post-title">{{ .Title }}</span>
-            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
-          </a>
-          {{ with .Description }}<p class="post-summary">{{ . }}</p>{{ end }}
-        </li>
-      {{ end }}
-    </ul>
-
+    {{ partial "post-list.html" .Paginator.Pages }}
     {{ template "_internal/pagination.html" . }}
+    <p class="subscribe">subscribe <a href="{{ "/index.xml" | relURL }}">via RSS</a></p>
   </section>
 {{ end }}

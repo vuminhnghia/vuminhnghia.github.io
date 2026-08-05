@@ -1,5 +1,5 @@
 ---
-title: "Vu Minh Nghia"
+title: "Nghia Vu"
 ---
 
 Hi, I'm Nghia. I write about **AI**, **research**, and the occasional random thought.

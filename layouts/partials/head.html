@@ -18,5 +18,15 @@
 
   {{ $css := resources.Get "css/main.css" | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧭</text></svg>">
+  {{ with .OutputFormats.Get "rss" }}
+    <link rel="alternate" type="application/rss+xml" href="{{ .Permalink }}" title="{{ site.Title }}">
+  {{ end }}
+  {{ with resources.Get "img/avatar.jpg" }}
+    {{ $ico32 := .Resize "32x32 png" }}
+    {{ $ico180 := .Resize "180x180 png" }}
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ $ico32.RelPermalink }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ $ico180.RelPermalink }}">
+    <meta property="og:image" content="{{ .Permalink }}">
+    <meta name="twitter:card" content="summary">
+  {{ end }}
 </head>

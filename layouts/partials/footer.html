@@ -1,9 +1,30 @@
 <footer class="site-footer">
-  <div class="social">
-    {{ with site.Params.social.github }}<a href="https://github.com/{{ . }}" rel="me">GitHub</a>{{ end }}
-    {{ with site.Params.social.email }}<a href="mailto:{{ . }}">Email</a>{{ end }}
-    {{ with site.Params.social.linkedin }}<a href="{{ . }}" rel="me">LinkedIn</a>{{ end }}
-    {{ with site.Params.social.twitter }}<a href="{{ . }}" rel="me">Twitter</a>{{ end }}
+  <div class="footer-grid">
+    <ul class="social">
+      {{ with site.Params.social.email }}
+        <li>{{ partial "icon.html" "email" }}<a href="mailto:{{ . }}">{{ . }}</a></li>
+      {{ end }}
+      {{ with site.Params.social.github }}
+        <li>{{ partial "icon.html" "github" }}<a href="https://github.com/{{ . }}" rel="me">{{ . }}</a></li>
+      {{ end }}
+      {{ with site.Params.social.linkedin }}
+        <li>{{ partial "icon.html" "linkedin" }}<a href="https://www.linkedin.com/in/{{ . }}" rel="me">{{ . }}</a></li>
+      {{ end }}
+      {{ with site.Params.social.twitter }}
+        <li>{{ partial "icon.html" "twitter" }}<a href="https://x.com/{{ . }}" rel="me">{{ . }}</a></li>
+      {{ end }}
+      {{ with site.Params.social.instagram }}
+        <li>{{ partial "icon.html" "instagram" }}<a href="https://www.instagram.com/{{ . }}" rel="me">{{ . }}</a></li>
+      {{ end }}
+      {{ with site.Params.social.facebook }}
+        <li>{{ partial "icon.html" "facebook" }}<a href="https://www.facebook.com/{{ . }}" rel="me">{{ . }}</a></li>
+      {{ end }}
+      <li>{{ partial "icon.html" "rss" }}<a href="{{ "/index.xml" | relURL }}">RSS</a></li>
+    </ul>
+
+    <div class="footer-bio">
+      {{ with site.Params.footerBio }}<p>{{ . | markdownify }}</p>{{ end }}
+      <p class="copy">{{ now.Year }} © {{ site.Params.author }}</p>
+    </div>
   </div>
-  <p>© {{ now.Year }} {{ site.Params.author }}. Built with Hugo.</p>
 </footer>
